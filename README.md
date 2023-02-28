@@ -3,10 +3,6 @@
 
 ![Orchestration](https://insatunisia.github.io/TP-eServices/img/orchestration.png)
 
-### Download PDF
-
-[![Download TP2](https://insatunisia.github.io/TP-eServices/img/pdf.png)](https://insatunisia.github.io/TP-eServices/tp2.pdf)
-
 ### Lab objectives
 
 Creation of a business process (Business Process) using Camunda.
@@ -202,9 +198,7 @@ _Camunda offers the Cockpit_ tool to inspect running and completed processes, an
 
 -   Go to the _Camunda Tasklist_ ( `http://localhost:8080/camunda/app/tasklist`), then start the process by clicking on the _Start Process_ button (top right).
 -   Click on your _Helloworld_ process .
--   Add as many variables as necessary in the generic form. In our case, we are going to add a _name_ variable of character string type. To do this, click on _Add a variable_ and fill in as follows (put your name of course, not mine ![😃](https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/1f603.svg ":smiley:")):
-
-![Add variable](https://insatunisia.github.io/TP-eServices/img/tp2/run-var.png)
+-   Add as many variables as necessary in the generic form. In our case, we are going to add a _name_ variable of character string type. To do this, click on _Add a variable_ and fill in as follows (put your name of course, not mine ! 
 
 -   Refreshing the Cockpit now, you will find that the process has moved to the _Running_ state .
 
