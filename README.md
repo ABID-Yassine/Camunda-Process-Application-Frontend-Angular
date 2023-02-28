@@ -1,12 +1,11 @@
 
-
 ## CAMUNDA - SPRING BOOT - ANGULAR
 
-![Orchestration]
+![Orchestration](https://insatunisia.github.io/TP-eServices/img/orchestration.png)
 
 ### Download PDF
 
-[![Download TP2]
+[![Download TP2](https://insatunisia.github.io/TP-eServices/img/pdf.png)](https://insatunisia.github.io/TP-eServices/tp2.pdf)
 
 ### Lab objectives
 
@@ -19,11 +18,11 @@ Creation of a business process (Business Process) using Camunda.
 -   [IntelliJ IDEA](https://www.jetbrains.com/idea/download/) Version Ultimate 2016.1 (or any other IDE of your choice)
 -   [Camunda Modeler](https://camunda.org/download/modeler/) Version 1.10.0
 
-### Camunda[![Camunda website](
+### Camunda[![Camunda website](https://insatunisia.github.io/TP-eServices/img/website.png)](https://camunda.org/)
 
 Camunda is an open source platform for business process management. It is a Java framework that supports **BPMN** for process automation, **CMMN** for Case Management, and **DMN** for Business Decision Management.
 
-### BPMN 2.0  [![BPMN Website]
+### BPMN 2.0  [![BPMN Website](https://insatunisia.github.io/TP-eServices/img/website.png)](http://www.bpmn.org/)
 
 BPMN 2.0 (Business Process Modeling Notation) is a standard developed by the Object Management Group ( **OMG** ) to provide a notation that is easily understood by all business users: business analysts, developers implementing the technologies executing these processes, and people managing and overseeing these processes. BPMN makes it possible to establish a bridge minimizing the gap between the designs of the processes and their implementations.
 
@@ -42,7 +41,7 @@ To install the environment necessary for this lab, follow these steps:
 
 ### First Camunda BPMN Project: Helloworld
 
-#### Project Creation and Dependencie
+#### Project Creation and Dependencies
 
 You will now create a new Java project to define the behavior of your process.
 
@@ -98,11 +97,12 @@ You will now create a new Java project to define the behavior of your process.
 
 -   Make a build of your project. To do this, create a new Maven-like configuration, which you will call _maven-install_ for example, and you will write in the **Command Line** part : _install_ , as follows:
 
-![Maven Install]
+![Maven Install](https://insatunisia.github.io/TP-eServices/img/tp2/maven-install.png)
 
 -   Launch the build and check that your packages have been installed.
 
 #### Creating the main class for the process
+
 The next step is to build a class for the process. This class represents the interface between your application and the Camunda process engine.
 
 `package tn.insat.eservices.tp2.helloworld;
@@ -136,22 +136,22 @@ The modeling of the process will be done using the _Camunda Modeler_ . For that:
 
 -   Start the application, and create a new BPMN diagram by clicking on _File > New File > BPMN Diagram_ .
 
-![First Camunda Project]
+![First Camunda Project](https://insatunisia.github.io/TP-eServices/img/tp2/camunda-first-proj.png)
 
 -   Double-click on the starting event (the small circle) to modify its name. We'll call it _Say Hello_ .
 -   Click on the starting event, choose the rectangle (representing an activity) from the pop-up menu that appears, and drag it to a suitable location. We'll call the new inserted event _Add Hello_ .
 
-![]
+![](https://insatunisia.github.io/TP-eServices/img/tp2/menu-contextuel.png)
 
 -   This task will be the one where the user will indicate his name for the eternal **Hello <name>!** . For this, we must indicate that the processing done here will be carried out by a human. To do this, by clicking on the created activity, click in the popup menu on the adjustable wrench, then choose _User Task_ .
 
-![]
+![](https://insatunisia.github.io/TP-eServices/img/tp2/user-task.png)
 
 -   Add an end task to the process.
 
 We finally obtain the following diagram:
 
-![](
+![](https://insatunisia.github.io/TP-eServices/img/tp2/hw-process.png)
 
 #### Process Setup
 
@@ -167,7 +167,7 @@ You will get the following result:
 
 -   Save the diagram under the _src/main/resources_ directory of the project you created. You will call it _helloworld.bpmn_
 
-#### Process deployment[¶](https://insatunisia.github.io/TP-eServices/tp2/#deploiement-du-processus "Permanent link")
+#### Process deployment
 
 -   Configure the application to be deployed on the integrated tomcat server in your Camunda installation. For this, in IntelliJ:
     
@@ -192,13 +192,13 @@ The file should contain the following lines:
 
 ![BPMN deployed!](https://insatunisia.github.io/TP-eServices/img/tp2/bpm-deployed.png)
 
-#### Checking the deployment with Cockpit[¶](https://insatunisia.github.io/TP-eServices/tp2/#verification-du-deploiement-avec-cockpit "Permanent link")
+#### Checking the deployment with Cockpit
 
 _Camunda offers the Cockpit_ tool to inspect running and completed processes, and manage various incidents. To do this, if your Camunda server is well launched, you will be able to view your processes in the browser, by typing: `http://localhost:8080/camunda/app/cockpit`. Identify yourself as an administrator by typing the credentials: `demo/demo`. Click on the number under _Process Definitions_ (it should be **2** in your case), you should find your process, with a _checked_ state .
 
 ![Cockpit](https://insatunisia.github.io/TP-eServices/img/tp2/cockpit.png)
 
-#### Starting the process[¶](https://insatunisia.github.io/TP-eServices/tp2/#demarrage-du-processus "Permanent link")
+#### Starting the process
 
 -   Go to the _Camunda Tasklist_ ( `http://localhost:8080/camunda/app/tasklist`), then start the process by clicking on the _Start Process_ button (top right).
 -   Click on your _Helloworld_ process .
@@ -208,7 +208,7 @@ _Camunda offers the Cockpit_ tool to inspect running and completed processes, an
 
 -   Refreshing the Cockpit now, you will find that the process has moved to the _Running_ state .
 
-#### Configuring permissions[¶](https://insatunisia.github.io/TP-eServices/tp2/#configuration-des-permissions "Permanent link")
+#### Configuring permissions
 
 To allow the user John to view and launch the _Helloworld_ process , it will be necessary to add the authorizations to him. For that:
 
@@ -225,7 +225,7 @@ To allow the user John to view and launch the _Helloworld_ process , it will be 
 
 ![Run the process](https://insatunisia.github.io/TP-eServices/img/tp2/john-run-process.png)
 
-#### Creating a custom form[¶](https://insatunisia.github.io/TP-eServices/tp2/#creation-dun-formulaire-personnalise "Permanent link")
+#### Creating a custom form
 
 To create your own form, with input variables that can be manipulated by the service, follow these steps:
 
@@ -267,7 +267,7 @@ To create your own form, with input variables that can be manipulated by the ser
 -   Save everything and re-deploy the project.
 -   Now start the process. Enter your name in the _Name_ field .
 
-![Run Process2](https://insatunisia.github.io/TP-eServices/img/tp2/start-process-2.png)
+![Run Process2]
 
 -   Identify yourself as John again, you will find the second form:
 
@@ -275,7 +275,7 @@ To create your own form, with input variables that can be manipulated by the ser
 
 For now, when clicking on complete, nothing happens, because we have not indicated anywhere what must be done following the entry of "Hello" by John. This will be done through a _Service Task_ .
 
-#### Adding a Java Service Task[¶](https://insatunisia.github.io/TP-eServices/tp2/#ajout-dun-service-task-java "Permanent link")
+#### Adding a Java Service Task
 
 To define the behavior of your service, follow these steps:
 
@@ -302,7 +302,7 @@ public class ProcessRequestDelegate implements JavaDelegate {
 
 ![Hello Lilia!](https://insatunisia.github.io/TP-eServices/img/tp2/bonjour.png)
 
-### Calling a REST Web Service[¶](https://insatunisia.github.io/TP-eServices/tp2/#appel-dun-service-web-rest "Permanent link")
+### Calling a REST Web Service
 
 Thanks to connectors, Camunda can integrate REST or SOAP web services. For this, we are going to use a classic weather web service. In his form, John will enter the name of a city, and the process should return the current temperature in that city, in addition to the usual Hello.
 
