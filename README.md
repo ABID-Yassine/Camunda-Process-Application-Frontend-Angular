@@ -2,28 +2,28 @@
 
 ## CAMUNDA - SPRING BOOT - ANGULAR
 
-![Orchestration](https://insatunisia.github.io/TP-eServices/img/orchestration.png)
+![Orchestration]
 
-### Download PDF[¶](https://insatunisia.github.io/TP-eServices/tp2/#telecharger-pdf "Permanent link")
+### Download PDF
 
-[![Download TP2](https://insatunisia.github.io/TP-eServices/img/pdf.png)](https://insatunisia.github.io/TP-eServices/tp2.pdf)
+[![Download TP2]
 
-### Lab objectives[¶](https://insatunisia.github.io/TP-eServices/tp2/#objectifs-du-tp "Permanent link")
+### Lab objectives
 
 Creation of a business process (Business Process) using Camunda.
 
-### Tools and Versions[¶](https://insatunisia.github.io/TP-eServices/tp2/#outils-et-versions "Permanent link")
+### Tools and Versions
 
 -   [Camunda](https://camunda.org/download/) Version: 7.7.0
 -   [Java](http://www.oracle.com/technetwork/java/javase/downloads/index-jsp-138363.html)  Version 1.8.0_121 (7+ needed).
 -   [IntelliJ IDEA](https://www.jetbrains.com/idea/download/) Version Ultimate 2016.1 (or any other IDE of your choice)
 -   [Camunda Modeler](https://camunda.org/download/modeler/) Version 1.10.0
 
-### Camunda[![Camunda website](https://insatunisia.github.io/TP-eServices/img/website.png)](https://camunda.org/)[¶](https://insatunisia.github.io/TP-eServices/tp2/#camunda "Permanent link")
+### Camunda[![Camunda website](
 
 Camunda is an open source platform for business process management. It is a Java framework that supports **BPMN** for process automation, **CMMN** for Case Management, and **DMN** for Business Decision Management.
 
-### BPMN 2.0  [![BPMN Website](https://insatunisia.github.io/TP-eServices/img/website.png)](http://www.bpmn.org/)[¶](https://insatunisia.github.io/TP-eServices/tp2/#bpmn-20 "Permanent link")
+### BPMN 2.0  [![BPMN Website]
 
 BPMN 2.0 (Business Process Modeling Notation) is a standard developed by the Object Management Group ( **OMG** ) to provide a notation that is easily understood by all business users: business analysts, developers implementing the technologies executing these processes, and people managing and overseeing these processes. BPMN makes it possible to establish a bridge minimizing the gap between the designs of the processes and their implementations.
 
@@ -31,7 +31,7 @@ In its first version, the BPMN specification provided only graphical notation, a
 
 This second version extends this standard by including execution semantics and a common exchange format. This means that BPMN 2.0 process models can be exchanged between different graphical editors, and run on any engine compatible with BPMN 2.0, such as Camunda and Activiti.
 
-### Installation[¶](https://insatunisia.github.io/TP-eServices/tp2/#installation "Permanent link")
+### Installation
 
 To install the environment necessary for this lab, follow these steps:
 
@@ -40,9 +40,9 @@ To install the environment necessary for this lab, follow these steps:
 -   Open the application server home page in your favorite browser.
 -   Launch the Camunda Modeler.
 
-### First Camunda BPMN Project: Helloworld[¶](https://insatunisia.github.io/TP-eServices/tp2/#premier-projet-camunda-bpmn-helloworld "Permanent link")
+### First Camunda BPMN Project: Helloworld
 
-#### Project Creation and Dependencies[¶](https://insatunisia.github.io/TP-eServices/tp2/#creation-du-projet-et-dependances "Permanent link")
+#### Project Creation and Dependencie
 
 You will now create a new Java project to define the behavior of your process.
 
@@ -98,12 +98,11 @@ You will now create a new Java project to define the behavior of your process.
 
 -   Make a build of your project. To do this, create a new Maven-like configuration, which you will call _maven-install_ for example, and you will write in the **Command Line** part : _install_ , as follows:
 
-![Maven Install](https://insatunisia.github.io/TP-eServices/img/tp2/maven-install.png)
+![Maven Install]
 
 -   Launch the build and check that your packages have been installed.
 
-#### Creating the main class for the process[¶](https://insatunisia.github.io/TP-eServices/tp2/#creation-de-la-classe-principale-pour-le-processus "Permanent link")
-
+#### Creating the main class for the process
 The next step is to build a class for the process. This class represents the interface between your application and the Camunda process engine.
 
 `package tn.insat.eservices.tp2.helloworld;
@@ -131,30 +130,30 @@ _Then add the processes.xml_ file under the _src/main/resources/META-INF_ direct
 
 From this point, we will start modeling the process.
 
-#### Modeling a BPMN 2.0 process[¶](https://insatunisia.github.io/TP-eServices/tp2/#modelisation-dun-processus-bpmn-20 "Permanent link")
+#### Modeling a BPMN 2.0 process
 
 The modeling of the process will be done using the _Camunda Modeler_ . For that:
 
 -   Start the application, and create a new BPMN diagram by clicking on _File > New File > BPMN Diagram_ .
 
-![First Camunda Project](https://insatunisia.github.io/TP-eServices/img/tp2/camunda-first-proj.png)
+![First Camunda Project]
 
 -   Double-click on the starting event (the small circle) to modify its name. We'll call it _Say Hello_ .
 -   Click on the starting event, choose the rectangle (representing an activity) from the pop-up menu that appears, and drag it to a suitable location. We'll call the new inserted event _Add Hello_ .
 
-![](https://insatunisia.github.io/TP-eServices/img/tp2/menu-contextuel.png)
+![]
 
 -   This task will be the one where the user will indicate his name for the eternal **Hello <name>!** . For this, we must indicate that the processing done here will be carried out by a human. To do this, by clicking on the created activity, click in the popup menu on the adjustable wrench, then choose _User Task_ .
 
-![](https://insatunisia.github.io/TP-eServices/img/tp2/user-task.png)
+![]
 
 -   Add an end task to the process.
 
 We finally obtain the following diagram:
 
-![](https://insatunisia.github.io/TP-eServices/img/tp2/hw-process.png)
+![](
 
-#### Process Setup[¶](https://insatunisia.github.io/TP-eServices/tp2/#configuration-du-processus "Permanent link")
+#### Process Setup
 
 -   To configure the _Add Bonjour_ user task , click on it, and fill in the properties panel (on the right). Define the user for whom this activity will be intended. To do this, in the _Assignee_ field , insert _john_ . John is a predefined user on the Camunda server. Later, you can define your own list of users and roles.
 -   To configure the entire process, click on an empty spot on the canvas. In the properties panel, specify the following fields:
